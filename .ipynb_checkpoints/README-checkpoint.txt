@@ -1,0 +1,1 @@
+Hi, Welcome to the Repo. We have wrappers here that create measures of uncertainty for arbitrary neural networks. You just wrap your network in one of our wrappers before you train it, and boom. Got an uncertainty measure. See the notebook WUT_Guide.ipynb for a tutorial, and stay fresh out there. 

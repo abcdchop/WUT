@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>WUT.SVI API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WUT.SVI</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import tensorflow as tf
+import types
+from tensorflow.python.keras.layers.ops import core as core_ops
+import mdn
+from tensorflow.compat.v1.keras import layers
+from tensorflow.python.keras import activations
+from tensorflow_probability import distributions as tfd
+from keras import backend as K
+from keras import activations, initializers
+import tensorflow_probability as tfp
+
+
+class SVI():
+    def __init__(self, Model, kl_weight=1., prior_sigma_1=1.5, prior_sigma_2=0.1, prior_pi=0.5, SVI_Layers=[tf.keras.layers.Dense],  normalize = True, task = &#39;regression&#39;, one_hot = True, **kwargs):
+
+        &#34;&#34;&#34;SVI Initializer. Turns a neural network into an SVI network.
+
+        Args:
+            Model: Input Keras Model.
+            kl_weight: Weight Parameter for KL Divergence.
+            prior_sigma_1: First sigma for prior on weights
+            prior_sigma_2: Second sigma for prior on weights
+            prior_pi: First pi for prior on weights, second is 1 - prior_pi
+            SVI_Layers: Layer types for which SVI can be applied-- the defaults, dense are garunteed safe, add others at your own risk
+            normalize: Whether to normalize input and output values before using-- if you get nans, trying switching! Regression only
+            task: regression or classification
+            one_hot: are the input targets in one hot format. True if they inputs are one hot. Classification only.
+
+        Returns:
+            Nothing lol
+
+        &#34;&#34;&#34;
+                
+        self.model = Model()
+        self.SVI_Layers = SVI_Layers
+        self.one_hot = one_hot
+        self.use_normalization = normalize
+        self.task = task
+        
+        self.train_std = 0                
+        self.xmean, self.xstd = 0., 1.
+        self.ymean, self.ystd = 0., 1.
+        
+        if task == &#39;regression&#39;:
+            last_layer = self.model.layers[-1]
+            self.dim = last_layer.units
+            last_layer.units = 2 * last_layer.units   
+        if task == &#39;classification&#39;:
+            self.dim = self.model.layers[-1].units
+            
+        def compute_output_shape(self, input_shape):
+            return input_shape[0], self.units
+
+        def kl_loss(self, w, mu, sigma):
+            variational_dist = tfp.distributions.Normal(mu, sigma)
+            return self.kl_weight * K.sum(variational_dist.log_prob(w) - self.log_prior_prob(w))
+
+        def build(self, input_shape):
+            self.kernel_mu = self.add_weight(name=&#39;kernel_mu&#39;,
+                                             shape=(input_shape[1], self.units),
+                                             initializer=initializers.RandomNormal(stddev=self.init_sigma),
+                                             trainable=True)
+            self.bias_mu = self.add_weight(name=&#39;bias_mu&#39;,
+                                           shape=(self.units,),
+                                           initializer=initializers.RandomNormal(stddev=self.init_sigma),
+                                           trainable=True)
+            self.kernel_rho = self.add_weight(name=&#39;kernel_rho&#39;,
+                                              shape=(input_shape[1], self.units),
+                                              initializer=initializers.Constant(0.0),
+                                              trainable=True)
+            self.bias_rho = self.add_weight(name=&#39;bias_rho&#39;,
+                                            shape=(self.units,),
+                                            initializer=initializers.Constant(0.0),
+                                            trainable=True)
+            self._trainable_weights = [self.kernel_mu, self.bias_mu, self.kernel_rho, self.bias_rho]# 
+            
+        def call(self, inputs, **kwargs):
+            
+            if self.built == False:
+                self.build(inputs.shape)
+                self.built = True
+            
+            kernel_sigma = tf.math.softplus(self.kernel_rho)
+            kernel = self.kernel_mu + kernel_sigma * tf.random.normal(self.kernel_mu.shape)
+
+            bias_sigma = tf.math.softplus(self.bias_rho)
+            bias = self.bias_mu + bias_sigma * tf.random.normal(self.bias_mu.shape)
+
+            self.add_loss(self.kl_loss(kernel, self.kernel_mu, kernel_sigma) +
+                          self.kl_loss(bias, self.bias_mu, bias_sigma))
+
+            return self.activation(K.dot(inputs, kernel) + bias)
+
+        def log_prior_prob(self, w):
+            comp_1_dist = tfp.distributions.Normal(0.0, self.prior_sigma_1)
+            comp_2_dist = tfp.distributions.Normal(0.0, self.prior_sigma_2)
+            return K.log(self.prior_pi_1 * comp_1_dist.prob(w) +
+                         self.prior_pi_2 * comp_2_dist.prob(w))
+        
+        
+        for layer in self.model.layers:
+            if layer.__class__ in SVI_Layers: 
+                layer.kl_weight = kl_weight
+                layer.prior_sigma_1 = prior_sigma_1
+                layer.prior_sigma_2 = prior_sigma_2
+                layer.prior_pi_1 = prior_pi
+                layer.prior_pi_2 = 1.0 - prior_pi
+                layer.init_sigma = np.sqrt(layer.prior_pi_1 * layer.prior_sigma_1 ** 2 +
+                                          layer.prior_pi_2 * layer.prior_sigma_2 ** 2)
+                layer.compute_output_shape = types.MethodType(compute_output_shape, layer)
+                layer.build = types.MethodType(build, layer)
+                layer.call = types.MethodType(call, layer)
+                layer.kl_loss = types.MethodType(kl_loss, layer)
+                layer.log_prior_prob = types.MethodType(log_prior_prob, layer)
+                layer.built = False
+            
+    def fit_normalize(self, X):
+        &#34;&#34;&#34;fit_normalize. helper function to normalize input values and generate future normalizations
+
+        Returns:
+            normalized X, mean, std
+
+        &#34;&#34;&#34;
+        
+        
+        mean = tf.math.reduce_mean(X, axis=0, keepdims=True)
+        std = tf.math.reduce_std(X, axis=0, keepdims=True)
+        return (X - mean)/std, mean, std
+    
+    def unnormalize(self, Y):
+        
+        &#34;&#34;&#34;unnormalize. helper function to unnormalize output values
+
+        Returns:
+            unnormalized Y
+
+        &#34;&#34;&#34;
+
+        return (Y*self.ystd) + self.ymean
+    
+    def Y_normalize(self, Y):
+        
+        &#34;&#34;&#34;Y_normalize. helper function to normalize output values in training set
+
+        Returns:
+            normalized Y
+
+        &#34;&#34;&#34;
+
+        return (Y - self.ymean)/self.ystd
+    
+    def std_unnormalize(self, Y):
+        &#34;&#34;&#34;unnormalize. helper function to unnormalize output values by varying std-- used for std predictions.
+
+        Returns:
+            unnormalized Y
+
+        &#34;&#34;&#34;
+        
+        return Y * self.ystd
+    
+    def normalize(self, X):
+        &#34;&#34;&#34;normalize. helper function to normalize input values
+
+        Returns:
+            normalized X
+
+        &#34;&#34;&#34;
+
+        return (X - self.xmean)/self.xstd
+        
+    def compile(self, *args, loss=None, **kwargs):
+        
+        &#34;&#34;&#34;compile. Literally use this as you&#39;d use the normal compile, but don&#39;t use your own loss functions, unless your really deep in this. Let the default one go
+
+        Args:
+            loss: if you really wanna make your own loss function
+
+        Returns:
+            Nothing lol
+
+        &#34;&#34;&#34;
+
+
+        
+        if loss is None:
+            loss = self.neg_log_likelihood
+        else:
+            print(&#34;Warning: you might be in for a rocky ride here, you specified your own loss function. If you don&#39;t know what your doing, don&#39;t do this! Loss functions have to be in the style of neg_log_likelihood in the source code/&#34;)
+        kwargs[&#39;loss&#39;] = loss          
+        self.model.compile(*args, **kwargs)   
+        
+        
+    def elu_plus_one_plus_epsilon(self, x):
+        &#34;&#34;&#34;ELU activation with a very small addition to help prevent
+        NaN in loss.&#34;&#34;&#34;
+        return tf.keras.backend.elu(x) + 1 + .00001
+
+    def neg_log_likelihood(self, y_obs, y_pred):
+        if self.task == &#39;regression&#39;:
+            y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+            if self.train_std == 1:
+                pass
+                y_stds = (y_stds)**2. + .1
+            else:
+                y_stds = tf.constant(1.0)
+            dist = tfp.distributions.Normal(loc=y_means, scale=y_stds )
+            return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.float32)))
+        
+        if self.task == &#39;classification&#39;:
+            
+            y_pred = (tf.reshape(y_pred, [-1, self.dim]))
+            y_obs = tf.reshape(y_obs, [-1, self.dim, 1])
+            dist = tfp.distributions.Categorical(logits = y_pred)
+            return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.int32)))
+
+
+
+
+    def evaluate(self, *args, **kwargs):
+        
+        &#34;&#34;&#34;evaluate. Literally use this as you&#39;d use the normal keras evaluate.
+        Returns:
+            The model&#39;s score, evaluated on whatever inputs you just fed it.
+
+        &#34;&#34;&#34;
+
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0] = self.normalize(args[0])
+            if self.task == &#39;regression&#39;:
+                args[1] = self.Y_normalize(args[1])
+            args = tuple(args)
+            
+        if (self.one_hot == False) and self.task == &#39;classification&#39;:
+            args = list(args)
+            data_amnt = args[1].shape[0]
+            args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+            args[1] = tf.reshape(args[1], [data_amnt, -1])
+            args = tuple(args)
+
+        return self.model.evaluate( *args, **kwargs)
+    
+    
+    def fit(self, *args, **kwargs):
+        
+        &#34;&#34;&#34;fit. Literally use this as you&#39;d use the normal keras fit.
+
+        Returns:
+            Nothing lol.
+
+        &#34;&#34;&#34;
+
+        
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0], self.xmean, self.xstd = self.fit_normalize(args[0])
+            if self.task == &#39;regression&#39;:
+                args[1], self.ymean, self.ystd = self.fit_normalize(args[1])
+            args = tuple(args)
+        
+        if &#39;batch_size&#39; not in kwargs.keys():
+            kwargs[&#39;batch_size&#39;] = 42
+        
+        for layer in self.model.layers:
+            if layer.__class__ in self.SVI_Layers:            
+                layer.kl_weight = kwargs[&#39;batch_size&#39;] * layer.kl_weight/args[0].shape[0]
+                
+        if (self.one_hot == False) and self.task == &#39;classification&#39;:
+            args = list(args)
+            data_amnt = args[1].shape[0]
+            args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+            args[1] = tf.reshape(args[1], [data_amnt, -1])
+            args = tuple(args)
+            
+        if &#39;validation_data&#39; in kwargs.keys():
+            kwargs[&#39;validation_data&#39;] = list(kwargs[&#39;validation_data&#39;])
+            data_amnt = kwargs[&#39;validation_data&#39;][1].shape[0]
+            args[1] = tf.one_hot(kwargs[&#39;validation_data&#39;][1] , tf.dtypes.cast(tf.reduce_max(kwargs[&#39;validation_data&#39;][1] ) + 1, tf.int32))
+            args[1] = tf.reshape(kwargs[&#39;validation_data&#39;][1], [data_amnt, -1])
+            args = tuple(args)
+
+        self.model.fit(*args, **kwargs)
+        
+        if self.task == &#39;regression&#39;:
+            self.train_std = 1
+            self.model.fit(*args, **kwargs)
+            self.train_std = 0
+
+        for layer in self.model.layers:
+            if layer.__class__ in self.SVI_Layers:            
+                layer.kl_weight =  layer.kl_weight*args[0].shape[0]/kwargs[&#39;batch_size&#39;]
+
+    def predict(self, *args, return_std = True, **kwargs):
+        
+        &#34;&#34;&#34;predict. Literally use this as you&#39;d use the normal keras predict.
+
+        Returns:
+            a probability distribution over outputs, for each input.
+
+        &#34;&#34;&#34;
+
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0] = self.normalize(args[0])
+            args = tuple(args)
+        y_pred = self.model.predict(*args, **kwargs)
+        
+        if self.task == &#39;regression&#39;:
+            y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+            if self.use_normalization is True:
+                y_means = self.unnormalize(y_means)
+                y_stds = self.std_unnormalize(tf.exp(y_stds))
+            dist = tfp.distributions.Normal(loc=y_means, scale=y_stds)
+            return dist
+        
+        if self.task == &#39;classification&#39;:
+            y_pred = tf.reshape(y_pred,  [-1, self.dim])
+            dist = tfp.distributions.Categorical(logits= y_pred)
+            return dist</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="WUT.SVI.SVI"><code class="flex name class">
+<span>class <span class="ident">SVI</span></span>
+<span>(</span><span>Model, kl_weight=1.0, prior_sigma_1=1.5, prior_sigma_2=0.1, prior_pi=0.5, SVI_Layers=[&lt;class &#x27;tensorflow.python.keras.layers.core.Dense&#x27;&gt;], normalize=True, task='regression', one_hot=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>SVI Initializer. Turns a neural network into an SVI network.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>Model</code></strong></dt>
+<dd>Input Keras Model.</dd>
+<dt><strong><code>kl_weight</code></strong></dt>
+<dd>Weight Parameter for KL Divergence.</dd>
+<dt><strong><code>prior_sigma_1</code></strong></dt>
+<dd>First sigma for prior on weights</dd>
+<dt><strong><code>prior_sigma_2</code></strong></dt>
+<dd>Second sigma for prior on weights</dd>
+<dt><strong><code>prior_pi</code></strong></dt>
+<dd>First pi for prior on weights, second is 1 - prior_pi</dd>
+<dt><strong><code>SVI_Layers</code></strong></dt>
+<dd>Layer types for which SVI can be applied&ndash; the defaults, dense are garunteed safe, add others at your own risk</dd>
+<dt><strong><code>normalize</code></strong></dt>
+<dd>Whether to normalize input and output values before using&ndash; if you get nans, trying switching! Regression only</dd>
+<dt><strong><code>task</code></strong></dt>
+<dd>regression or classification</dd>
+<dt><strong><code>one_hot</code></strong></dt>
+<dd>are the input targets in one hot format. True if they inputs are one hot. Classification only.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Nothing lol</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SVI():
+    def __init__(self, Model, kl_weight=1., prior_sigma_1=1.5, prior_sigma_2=0.1, prior_pi=0.5, SVI_Layers=[tf.keras.layers.Dense],  normalize = True, task = &#39;regression&#39;, one_hot = True, **kwargs):
+
+        &#34;&#34;&#34;SVI Initializer. Turns a neural network into an SVI network.
+
+        Args:
+            Model: Input Keras Model.
+            kl_weight: Weight Parameter for KL Divergence.
+            prior_sigma_1: First sigma for prior on weights
+            prior_sigma_2: Second sigma for prior on weights
+            prior_pi: First pi for prior on weights, second is 1 - prior_pi
+            SVI_Layers: Layer types for which SVI can be applied-- the defaults, dense are garunteed safe, add others at your own risk
+            normalize: Whether to normalize input and output values before using-- if you get nans, trying switching! Regression only
+            task: regression or classification
+            one_hot: are the input targets in one hot format. True if they inputs are one hot. Classification only.
+
+        Returns:
+            Nothing lol
+
+        &#34;&#34;&#34;
+                
+        self.model = Model()
+        self.SVI_Layers = SVI_Layers
+        self.one_hot = one_hot
+        self.use_normalization = normalize
+        self.task = task
+        
+        self.train_std = 0                
+        self.xmean, self.xstd = 0., 1.
+        self.ymean, self.ystd = 0., 1.
+        
+        if task == &#39;regression&#39;:
+            last_layer = self.model.layers[-1]
+            self.dim = last_layer.units
+            last_layer.units = 2 * last_layer.units   
+        if task == &#39;classification&#39;:
+            self.dim = self.model.layers[-1].units
+            
+        def compute_output_shape(self, input_shape):
+            return input_shape[0], self.units
+
+        def kl_loss(self, w, mu, sigma):
+            variational_dist = tfp.distributions.Normal(mu, sigma)
+            return self.kl_weight * K.sum(variational_dist.log_prob(w) - self.log_prior_prob(w))
+
+        def build(self, input_shape):
+            self.kernel_mu = self.add_weight(name=&#39;kernel_mu&#39;,
+                                             shape=(input_shape[1], self.units),
+                                             initializer=initializers.RandomNormal(stddev=self.init_sigma),
+                                             trainable=True)
+            self.bias_mu = self.add_weight(name=&#39;bias_mu&#39;,
+                                           shape=(self.units,),
+                                           initializer=initializers.RandomNormal(stddev=self.init_sigma),
+                                           trainable=True)
+            self.kernel_rho = self.add_weight(name=&#39;kernel_rho&#39;,
+                                              shape=(input_shape[1], self.units),
+                                              initializer=initializers.Constant(0.0),
+                                              trainable=True)
+            self.bias_rho = self.add_weight(name=&#39;bias_rho&#39;,
+                                            shape=(self.units,),
+                                            initializer=initializers.Constant(0.0),
+                                            trainable=True)
+            self._trainable_weights = [self.kernel_mu, self.bias_mu, self.kernel_rho, self.bias_rho]# 
+            
+        def call(self, inputs, **kwargs):
+            
+            if self.built == False:
+                self.build(inputs.shape)
+                self.built = True
+            
+            kernel_sigma = tf.math.softplus(self.kernel_rho)
+            kernel = self.kernel_mu + kernel_sigma * tf.random.normal(self.kernel_mu.shape)
+
+            bias_sigma = tf.math.softplus(self.bias_rho)
+            bias = self.bias_mu + bias_sigma * tf.random.normal(self.bias_mu.shape)
+
+            self.add_loss(self.kl_loss(kernel, self.kernel_mu, kernel_sigma) +
+                          self.kl_loss(bias, self.bias_mu, bias_sigma))
+
+            return self.activation(K.dot(inputs, kernel) + bias)
+
+        def log_prior_prob(self, w):
+            comp_1_dist = tfp.distributions.Normal(0.0, self.prior_sigma_1)
+            comp_2_dist = tfp.distributions.Normal(0.0, self.prior_sigma_2)
+            return K.log(self.prior_pi_1 * comp_1_dist.prob(w) +
+                         self.prior_pi_2 * comp_2_dist.prob(w))
+        
+        
+        for layer in self.model.layers:
+            if layer.__class__ in SVI_Layers: 
+                layer.kl_weight = kl_weight
+                layer.prior_sigma_1 = prior_sigma_1
+                layer.prior_sigma_2 = prior_sigma_2
+                layer.prior_pi_1 = prior_pi
+                layer.prior_pi_2 = 1.0 - prior_pi
+                layer.init_sigma = np.sqrt(layer.prior_pi_1 * layer.prior_sigma_1 ** 2 +
+                                          layer.prior_pi_2 * layer.prior_sigma_2 ** 2)
+                layer.compute_output_shape = types.MethodType(compute_output_shape, layer)
+                layer.build = types.MethodType(build, layer)
+                layer.call = types.MethodType(call, layer)
+                layer.kl_loss = types.MethodType(kl_loss, layer)
+                layer.log_prior_prob = types.MethodType(log_prior_prob, layer)
+                layer.built = False
+            
+    def fit_normalize(self, X):
+        &#34;&#34;&#34;fit_normalize. helper function to normalize input values and generate future normalizations
+
+        Returns:
+            normalized X, mean, std
+
+        &#34;&#34;&#34;
+        
+        
+        mean = tf.math.reduce_mean(X, axis=0, keepdims=True)
+        std = tf.math.reduce_std(X, axis=0, keepdims=True)
+        return (X - mean)/std, mean, std
+    
+    def unnormalize(self, Y):
+        
+        &#34;&#34;&#34;unnormalize. helper function to unnormalize output values
+
+        Returns:
+            unnormalized Y
+
+        &#34;&#34;&#34;
+
+        return (Y*self.ystd) + self.ymean
+    
+    def Y_normalize(self, Y):
+        
+        &#34;&#34;&#34;Y_normalize. helper function to normalize output values in training set
+
+        Returns:
+            normalized Y
+
+        &#34;&#34;&#34;
+
+        return (Y - self.ymean)/self.ystd
+    
+    def std_unnormalize(self, Y):
+        &#34;&#34;&#34;unnormalize. helper function to unnormalize output values by varying std-- used for std predictions.
+
+        Returns:
+            unnormalized Y
+
+        &#34;&#34;&#34;
+        
+        return Y * self.ystd
+    
+    def normalize(self, X):
+        &#34;&#34;&#34;normalize. helper function to normalize input values
+
+        Returns:
+            normalized X
+
+        &#34;&#34;&#34;
+
+        return (X - self.xmean)/self.xstd
+        
+    def compile(self, *args, loss=None, **kwargs):
+        
+        &#34;&#34;&#34;compile. Literally use this as you&#39;d use the normal compile, but don&#39;t use your own loss functions, unless your really deep in this. Let the default one go
+
+        Args:
+            loss: if you really wanna make your own loss function
+
+        Returns:
+            Nothing lol
+
+        &#34;&#34;&#34;
+
+
+        
+        if loss is None:
+            loss = self.neg_log_likelihood
+        else:
+            print(&#34;Warning: you might be in for a rocky ride here, you specified your own loss function. If you don&#39;t know what your doing, don&#39;t do this! Loss functions have to be in the style of neg_log_likelihood in the source code/&#34;)
+        kwargs[&#39;loss&#39;] = loss          
+        self.model.compile(*args, **kwargs)   
+        
+        
+    def elu_plus_one_plus_epsilon(self, x):
+        &#34;&#34;&#34;ELU activation with a very small addition to help prevent
+        NaN in loss.&#34;&#34;&#34;
+        return tf.keras.backend.elu(x) + 1 + .00001
+
+    def neg_log_likelihood(self, y_obs, y_pred):
+        if self.task == &#39;regression&#39;:
+            y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+            if self.train_std == 1:
+                pass
+                y_stds = (y_stds)**2. + .1
+            else:
+                y_stds = tf.constant(1.0)
+            dist = tfp.distributions.Normal(loc=y_means, scale=y_stds )
+            return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.float32)))
+        
+        if self.task == &#39;classification&#39;:
+            
+            y_pred = (tf.reshape(y_pred, [-1, self.dim]))
+            y_obs = tf.reshape(y_obs, [-1, self.dim, 1])
+            dist = tfp.distributions.Categorical(logits = y_pred)
+            return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.int32)))
+
+
+
+
+    def evaluate(self, *args, **kwargs):
+        
+        &#34;&#34;&#34;evaluate. Literally use this as you&#39;d use the normal keras evaluate.
+        Returns:
+            The model&#39;s score, evaluated on whatever inputs you just fed it.
+
+        &#34;&#34;&#34;
+
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0] = self.normalize(args[0])
+            if self.task == &#39;regression&#39;:
+                args[1] = self.Y_normalize(args[1])
+            args = tuple(args)
+            
+        if (self.one_hot == False) and self.task == &#39;classification&#39;:
+            args = list(args)
+            data_amnt = args[1].shape[0]
+            args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+            args[1] = tf.reshape(args[1], [data_amnt, -1])
+            args = tuple(args)
+
+        return self.model.evaluate( *args, **kwargs)
+    
+    
+    def fit(self, *args, **kwargs):
+        
+        &#34;&#34;&#34;fit. Literally use this as you&#39;d use the normal keras fit.
+
+        Returns:
+            Nothing lol.
+
+        &#34;&#34;&#34;
+
+        
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0], self.xmean, self.xstd = self.fit_normalize(args[0])
+            if self.task == &#39;regression&#39;:
+                args[1], self.ymean, self.ystd = self.fit_normalize(args[1])
+            args = tuple(args)
+        
+        if &#39;batch_size&#39; not in kwargs.keys():
+            kwargs[&#39;batch_size&#39;] = 42
+        
+        for layer in self.model.layers:
+            if layer.__class__ in self.SVI_Layers:            
+                layer.kl_weight = kwargs[&#39;batch_size&#39;] * layer.kl_weight/args[0].shape[0]
+                
+        if (self.one_hot == False) and self.task == &#39;classification&#39;:
+            args = list(args)
+            data_amnt = args[1].shape[0]
+            args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+            args[1] = tf.reshape(args[1], [data_amnt, -1])
+            args = tuple(args)
+            
+        if &#39;validation_data&#39; in kwargs.keys():
+            kwargs[&#39;validation_data&#39;] = list(kwargs[&#39;validation_data&#39;])
+            data_amnt = kwargs[&#39;validation_data&#39;][1].shape[0]
+            args[1] = tf.one_hot(kwargs[&#39;validation_data&#39;][1] , tf.dtypes.cast(tf.reduce_max(kwargs[&#39;validation_data&#39;][1] ) + 1, tf.int32))
+            args[1] = tf.reshape(kwargs[&#39;validation_data&#39;][1], [data_amnt, -1])
+            args = tuple(args)
+
+        self.model.fit(*args, **kwargs)
+        
+        if self.task == &#39;regression&#39;:
+            self.train_std = 1
+            self.model.fit(*args, **kwargs)
+            self.train_std = 0
+
+        for layer in self.model.layers:
+            if layer.__class__ in self.SVI_Layers:            
+                layer.kl_weight =  layer.kl_weight*args[0].shape[0]/kwargs[&#39;batch_size&#39;]
+
+    def predict(self, *args, return_std = True, **kwargs):
+        
+        &#34;&#34;&#34;predict. Literally use this as you&#39;d use the normal keras predict.
+
+        Returns:
+            a probability distribution over outputs, for each input.
+
+        &#34;&#34;&#34;
+
+        
+        if self.use_normalization is True:
+            args = list(args)
+            args[0] = self.normalize(args[0])
+            args = tuple(args)
+        y_pred = self.model.predict(*args, **kwargs)
+        
+        if self.task == &#39;regression&#39;:
+            y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+            if self.use_normalization is True:
+                y_means = self.unnormalize(y_means)
+                y_stds = self.std_unnormalize(tf.exp(y_stds))
+            dist = tfp.distributions.Normal(loc=y_means, scale=y_stds)
+            return dist
+        
+        if self.task == &#39;classification&#39;:
+            y_pred = tf.reshape(y_pred,  [-1, self.dim])
+            dist = tfp.distributions.Categorical(logits= y_pred)
+            return dist</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="WUT.SVI.SVI.Y_normalize"><code class="name flex">
+<span>def <span class="ident">Y_normalize</span></span>(<span>self, Y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Y_normalize. helper function to normalize output values in training set</p>
+<h2 id="returns">Returns</h2>
+<p>normalized Y</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Y_normalize(self, Y):
+    
+    &#34;&#34;&#34;Y_normalize. helper function to normalize output values in training set
+
+    Returns:
+        normalized Y
+
+    &#34;&#34;&#34;
+
+    return (Y - self.ymean)/self.ystd</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.compile"><code class="name flex">
+<span>def <span class="ident">compile</span></span>(<span>self, *args, loss=None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>compile. Literally use this as you'd use the normal compile, but don't use your own loss functions, unless your really deep in this. Let the default one go</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>loss</code></strong></dt>
+<dd>if you really wanna make your own loss function</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Nothing lol</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compile(self, *args, loss=None, **kwargs):
+    
+    &#34;&#34;&#34;compile. Literally use this as you&#39;d use the normal compile, but don&#39;t use your own loss functions, unless your really deep in this. Let the default one go
+
+    Args:
+        loss: if you really wanna make your own loss function
+
+    Returns:
+        Nothing lol
+
+    &#34;&#34;&#34;
+
+
+    
+    if loss is None:
+        loss = self.neg_log_likelihood
+    else:
+        print(&#34;Warning: you might be in for a rocky ride here, you specified your own loss function. If you don&#39;t know what your doing, don&#39;t do this! Loss functions have to be in the style of neg_log_likelihood in the source code/&#34;)
+    kwargs[&#39;loss&#39;] = loss          
+    self.model.compile(*args, **kwargs)   </code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.elu_plus_one_plus_epsilon"><code class="name flex">
+<span>def <span class="ident">elu_plus_one_plus_epsilon</span></span>(<span>self, x)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ELU activation with a very small addition to help prevent
+NaN in loss.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def elu_plus_one_plus_epsilon(self, x):
+    &#34;&#34;&#34;ELU activation with a very small addition to help prevent
+    NaN in loss.&#34;&#34;&#34;
+    return tf.keras.backend.elu(x) + 1 + .00001</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.evaluate"><code class="name flex">
+<span>def <span class="ident">evaluate</span></span>(<span>self, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>evaluate. Literally use this as you'd use the normal keras evaluate.</p>
+<h2 id="returns">Returns</h2>
+<p>The model's score, evaluated on whatever inputs you just fed it.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def evaluate(self, *args, **kwargs):
+    
+    &#34;&#34;&#34;evaluate. Literally use this as you&#39;d use the normal keras evaluate.
+    Returns:
+        The model&#39;s score, evaluated on whatever inputs you just fed it.
+
+    &#34;&#34;&#34;
+
+    
+    if self.use_normalization is True:
+        args = list(args)
+        args[0] = self.normalize(args[0])
+        if self.task == &#39;regression&#39;:
+            args[1] = self.Y_normalize(args[1])
+        args = tuple(args)
+        
+    if (self.one_hot == False) and self.task == &#39;classification&#39;:
+        args = list(args)
+        data_amnt = args[1].shape[0]
+        args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+        args[1] = tf.reshape(args[1], [data_amnt, -1])
+        args = tuple(args)
+
+    return self.model.evaluate( *args, **kwargs)</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.fit"><code class="name flex">
+<span>def <span class="ident">fit</span></span>(<span>self, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fit. Literally use this as you'd use the normal keras fit.</p>
+<h2 id="returns">Returns</h2>
+<p>Nothing lol.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit(self, *args, **kwargs):
+    
+    &#34;&#34;&#34;fit. Literally use this as you&#39;d use the normal keras fit.
+
+    Returns:
+        Nothing lol.
+
+    &#34;&#34;&#34;
+
+    
+    
+    if self.use_normalization is True:
+        args = list(args)
+        args[0], self.xmean, self.xstd = self.fit_normalize(args[0])
+        if self.task == &#39;regression&#39;:
+            args[1], self.ymean, self.ystd = self.fit_normalize(args[1])
+        args = tuple(args)
+    
+    if &#39;batch_size&#39; not in kwargs.keys():
+        kwargs[&#39;batch_size&#39;] = 42
+    
+    for layer in self.model.layers:
+        if layer.__class__ in self.SVI_Layers:            
+            layer.kl_weight = kwargs[&#39;batch_size&#39;] * layer.kl_weight/args[0].shape[0]
+            
+    if (self.one_hot == False) and self.task == &#39;classification&#39;:
+        args = list(args)
+        data_amnt = args[1].shape[0]
+        args[1] = tf.one_hot(args[1] , tf.dtypes.cast(tf.reduce_max(args[1] ) + 1, tf.int32))
+        args[1] = tf.reshape(args[1], [data_amnt, -1])
+        args = tuple(args)
+        
+    if &#39;validation_data&#39; in kwargs.keys():
+        kwargs[&#39;validation_data&#39;] = list(kwargs[&#39;validation_data&#39;])
+        data_amnt = kwargs[&#39;validation_data&#39;][1].shape[0]
+        args[1] = tf.one_hot(kwargs[&#39;validation_data&#39;][1] , tf.dtypes.cast(tf.reduce_max(kwargs[&#39;validation_data&#39;][1] ) + 1, tf.int32))
+        args[1] = tf.reshape(kwargs[&#39;validation_data&#39;][1], [data_amnt, -1])
+        args = tuple(args)
+
+    self.model.fit(*args, **kwargs)
+    
+    if self.task == &#39;regression&#39;:
+        self.train_std = 1
+        self.model.fit(*args, **kwargs)
+        self.train_std = 0
+
+    for layer in self.model.layers:
+        if layer.__class__ in self.SVI_Layers:            
+            layer.kl_weight =  layer.kl_weight*args[0].shape[0]/kwargs[&#39;batch_size&#39;]</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.fit_normalize"><code class="name flex">
+<span>def <span class="ident">fit_normalize</span></span>(<span>self, X)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fit_normalize. helper function to normalize input values and generate future normalizations</p>
+<h2 id="returns">Returns</h2>
+<p>normalized X, mean, std</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit_normalize(self, X):
+    &#34;&#34;&#34;fit_normalize. helper function to normalize input values and generate future normalizations
+
+    Returns:
+        normalized X, mean, std
+
+    &#34;&#34;&#34;
+    
+    
+    mean = tf.math.reduce_mean(X, axis=0, keepdims=True)
+    std = tf.math.reduce_std(X, axis=0, keepdims=True)
+    return (X - mean)/std, mean, std</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.neg_log_likelihood"><code class="name flex">
+<span>def <span class="ident">neg_log_likelihood</span></span>(<span>self, y_obs, y_pred)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def neg_log_likelihood(self, y_obs, y_pred):
+    if self.task == &#39;regression&#39;:
+        y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+        if self.train_std == 1:
+            pass
+            y_stds = (y_stds)**2. + .1
+        else:
+            y_stds = tf.constant(1.0)
+        dist = tfp.distributions.Normal(loc=y_means, scale=y_stds )
+        return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.float32)))
+    
+    if self.task == &#39;classification&#39;:
+        
+        y_pred = (tf.reshape(y_pred, [-1, self.dim]))
+        y_obs = tf.reshape(y_obs, [-1, self.dim, 1])
+        dist = tfp.distributions.Categorical(logits = y_pred)
+        return K.sum(-dist.log_prob(tf.dtypes.cast(y_obs, tf.int32)))</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.normalize"><code class="name flex">
+<span>def <span class="ident">normalize</span></span>(<span>self, X)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>normalize. helper function to normalize input values</p>
+<h2 id="returns">Returns</h2>
+<p>normalized X</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalize(self, X):
+    &#34;&#34;&#34;normalize. helper function to normalize input values
+
+    Returns:
+        normalized X
+
+    &#34;&#34;&#34;
+
+    return (X - self.xmean)/self.xstd</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.predict"><code class="name flex">
+<span>def <span class="ident">predict</span></span>(<span>self, *args, return_std=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>predict. Literally use this as you'd use the normal keras predict.</p>
+<h2 id="returns">Returns</h2>
+<p>a probability distribution over outputs, for each input.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def predict(self, *args, return_std = True, **kwargs):
+    
+    &#34;&#34;&#34;predict. Literally use this as you&#39;d use the normal keras predict.
+
+    Returns:
+        a probability distribution over outputs, for each input.
+
+    &#34;&#34;&#34;
+
+    
+    if self.use_normalization is True:
+        args = list(args)
+        args[0] = self.normalize(args[0])
+        args = tuple(args)
+    y_pred = self.model.predict(*args, **kwargs)
+    
+    if self.task == &#39;regression&#39;:
+        y_means, y_stds = tf.split(y_pred, [self.dim, self.dim], axis = 1)
+        if self.use_normalization is True:
+            y_means = self.unnormalize(y_means)
+            y_stds = self.std_unnormalize(tf.exp(y_stds))
+        dist = tfp.distributions.Normal(loc=y_means, scale=y_stds)
+        return dist
+    
+    if self.task == &#39;classification&#39;:
+        y_pred = tf.reshape(y_pred,  [-1, self.dim])
+        dist = tfp.distributions.Categorical(logits= y_pred)
+        return dist</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.std_unnormalize"><code class="name flex">
+<span>def <span class="ident">std_unnormalize</span></span>(<span>self, Y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>unnormalize. helper function to unnormalize output values by varying std&ndash; used for std predictions.</p>
+<h2 id="returns">Returns</h2>
+<p>unnormalized Y</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def std_unnormalize(self, Y):
+    &#34;&#34;&#34;unnormalize. helper function to unnormalize output values by varying std-- used for std predictions.
+
+    Returns:
+        unnormalized Y
+
+    &#34;&#34;&#34;
+    
+    return Y * self.ystd</code></pre>
+</details>
+</dd>
+<dt id="WUT.SVI.SVI.unnormalize"><code class="name flex">
+<span>def <span class="ident">unnormalize</span></span>(<span>self, Y)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>unnormalize. helper function to unnormalize output values</p>
+<h2 id="returns">Returns</h2>
+<p>unnormalized Y</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unnormalize(self, Y):
+    
+    &#34;&#34;&#34;unnormalize. helper function to unnormalize output values
+
+    Returns:
+        unnormalized Y
+
+    &#34;&#34;&#34;
+
+    return (Y*self.ystd) + self.ymean</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WUT" href="index.html">WUT</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="WUT.SVI.SVI" href="#WUT.SVI.SVI">SVI</a></code></h4>
+<ul class="">
+<li><code><a title="WUT.SVI.SVI.Y_normalize" href="#WUT.SVI.SVI.Y_normalize">Y_normalize</a></code></li>
+<li><code><a title="WUT.SVI.SVI.compile" href="#WUT.SVI.SVI.compile">compile</a></code></li>
+<li><code><a title="WUT.SVI.SVI.elu_plus_one_plus_epsilon" href="#WUT.SVI.SVI.elu_plus_one_plus_epsilon">elu_plus_one_plus_epsilon</a></code></li>
+<li><code><a title="WUT.SVI.SVI.evaluate" href="#WUT.SVI.SVI.evaluate">evaluate</a></code></li>
+<li><code><a title="WUT.SVI.SVI.fit" href="#WUT.SVI.SVI.fit">fit</a></code></li>
+<li><code><a title="WUT.SVI.SVI.fit_normalize" href="#WUT.SVI.SVI.fit_normalize">fit_normalize</a></code></li>
+<li><code><a title="WUT.SVI.SVI.neg_log_likelihood" href="#WUT.SVI.SVI.neg_log_likelihood">neg_log_likelihood</a></code></li>
+<li><code><a title="WUT.SVI.SVI.normalize" href="#WUT.SVI.SVI.normalize">normalize</a></code></li>
+<li><code><a title="WUT.SVI.SVI.predict" href="#WUT.SVI.SVI.predict">predict</a></code></li>
+<li><code><a title="WUT.SVI.SVI.std_unnormalize" href="#WUT.SVI.SVI.std_unnormalize">std_unnormalize</a></code></li>
+<li><code><a title="WUT.SVI.SVI.unnormalize" href="#WUT.SVI.SVI.unnormalize">unnormalize</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
