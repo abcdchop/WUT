@@ -31,7 +31,7 @@ Available uncertainty quantification models are,
 This library has a dependency on [this](https://github.com/cpmpercussion/keras-mdn-layer) repo. Shoutout to compercussion on github for making the mdn layer, which is extremely good.
 
 ### For developers: 
-We welcome any contributions. Please make a [pull request](https://help.github.com/articles/using-pull-requests/).. Documents are generated using pdoc3. To install pdoc3 `pip install pdoc3`. To update the ducumentation `pdoc --html WUT --output-dir docs`. You might need to delete the subfolder `WUT/docs/WUT`.
+We welcome any contributions. Please make a [pull request](https://help.github.com/articles/using-pull-requests/). Documents are generated using pdoc3. To install pdoc3 `pip install pdoc3`. To update the ducumentation `pdoc --html WUT --output-dir docs`. You might need to delete the subfolder `WUT/docs/WUT`.
 
 ### Maintainers
 This library is maintained by [Chris Healy](https://profiles.stanford.edu/christopher-healy) and [Ransalu Senanayake](http://www.ransalu.com/).
