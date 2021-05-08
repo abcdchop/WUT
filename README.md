@@ -25,9 +25,9 @@ Available uncertainty quantification models are,
 
 
 ### Requirements: 
-   `pip install tensorflow` (should work for >= v.2.2, tested on v.2.4.1)
+   `pip install tensorflow` (tested with v.2.4.1, should work for >= v.2.2)
    
-   `pip install tensorflow-probability --upgrade`(tested on v.0.12.2)
+   `pip install tensorflow-probability --upgrade`(tested with v.0.12.2)
    
    `python3 -m pip install keras-mdn-layer`
    
