@@ -26,8 +26,11 @@ Available uncertainty quantification models are,
 
 ### Requirements: 
    `pip install tensorflow` (should work for >= v.2.2, tested on v.2.4.1)
+   
    `pip install tensorflow-probability --upgrade`(tested on v.0.12.2)
+   
    `python3 -m pip install keras-mdn-layer`
+   
 This library has a dependency on [this](https://github.com/cpmpercussion/keras-mdn-layer) repo. Shoutout to compercussion on github for making the mdn layer, which is extremely good.
 
 ### For developers: 
