@@ -1,4 +1,4 @@
-<img src="/docs/images/logo.png">
+# <img src="/docs/images/logo.png">
 
 * [Documentation](http://abcdchop.github.io/WUT/)
 * [Tutorial](WUT_Guide.ipynb)
