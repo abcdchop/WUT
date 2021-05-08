@@ -1,6 +1,6 @@
 # WUT? - Wrapper for Uncertainty in Tensorflow
 
-<img src="docs/images/logo.png">
+<img src="/docs/images/logo.png">
 
 * [Documentation](http://abcdchop.github.io/WUT/)
 * [Tutorial](WUT_Guide.ipynb)
@@ -13,7 +13,7 @@ model = Ensemble(<keras_model>)
 ```
 
 You can estimate both the mean and standard deviation for test inputs.
-<img src="docs/images/index.png">
+<img src="/docs/images/index.png">
 
 Available uncertainty quantification models are,
 
