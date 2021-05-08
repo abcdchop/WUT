@@ -1,4 +1,6 @@
 """
+.. image:: ../images/logo.png
+
 Welcome to WUT?! This is a library for uncertainty quantification in deep neural networks implemented in TensorFlow/Keras. The codebase can be found at https://github.com/abcdchop/WUT.
 
 Using the library is straightforward. Keras/TensorFlow models can be wrapped in one of the WUT? classes in a single line of code. For instance,
