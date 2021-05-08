@@ -11,7 +11,7 @@ from keras import activations, initializers
 import tensorflow_probability as tfp
 
 class Ensemble():
-    def __init__(self, Model, num_ens=1):
+    def __init__(self, Model, num_ens=3):
         
         """Ensemble Initializer. Turns a neural network into an ensemble of networks.
 
