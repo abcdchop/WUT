@@ -1,12 +1,10 @@
-# WUT? - Wrapper for Uncertainty in Tensorflow
-
 <img src="/docs/images/logo.png">
 
 * [Documentation](http://abcdchop.github.io/WUT/)
 * [Tutorial](WUT_Guide.ipynb)
 
 ### Features
-Welcome to WUT?! This is a library for uncertainty quantification in deep neural networks implemented in TensorFlow/Keras. Networks can be wrapped in one of the WUT? classes in a single line of code. For instance,
+Welcome to WUT?! a wrapper for uncertainty in tensorflow. This is a library for uncertainty quantification in deep neural networks implemented in TensorFlow/Keras. Networks can be wrapped in one of the WUT? classes in a single line of code. For instance,
 ```python
 from WUT.Ensemble import Ensemble`
 model = Ensemble(<keras_model>)
