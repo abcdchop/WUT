@@ -9,7 +9,6 @@ Using the library is straightforward. Keras/TensorFlow models can be wrapped in 
 
 You can estimate both the mean and standard deviation for a test input.
 .. image:: ../images/index.png
-.. image:: ../images/index.png
 
 To estimate the epistemic uncertainty, currently, we have implemented Ensemble, MCDropout, Variance Networks, and Stochastic Variational Inference (SVI). To estimate the multimodal aleatoric uncertainty, we have implemented a mixture of Gaussians at the last layer (a Mixture Density Network).
 
