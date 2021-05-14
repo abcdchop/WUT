@@ -9,15 +9,21 @@ from tensorflow_probability import distributions as tfd
 from keras import backend as K
 from keras import activations, initializers
 import tensorflow_probability as tfp
+import threading
 
+class ThreadWithResult(threading.Thread):
+    def __init__(self, group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None):
+        def function():
+            self.result = target(*args, **kwargs)
+        super().__init__(group=group, target=function, name=name, daemon=daemon)
 
 
 class Dropout():
-    
-    
+
+
     def __init__(self, Model, rate, dropout_layers = [tf.keras.layers.Dense]):
-        
-        
+
+
         """Dropout Initializer. Turns a neural network into an droput network.
 
         Args:
@@ -28,8 +34,8 @@ class Dropout():
         Returns:
             Nothing lol
 
-        """        
-        
+        """
+
         self.model = Model()
 
         def adddropout(denselayer):
@@ -44,7 +50,7 @@ class Dropout():
                 layer.call = types.MethodType(func, layer)
 
     def compile(self, *args, **kwargs):
-        
+
         """compile. Literally use this as you'd use the normal compile.
 
         Returns:
@@ -55,7 +61,7 @@ class Dropout():
         self.model.compile(*args, **kwargs)
 
     def fit(self, *args, **kwargs):
-        
+
         """fit. Literally use this as you'd use the normal keras fit.
 
         Returns:
@@ -63,12 +69,12 @@ class Dropout():
 
         """
 
-        
+
         self.model.fit(*args, **kwargs)
 
     def evaluate(self, *args, trials = 3, **kwargs):
-        
-        
+
+
         """evaluate. Literally use this as you'd use the normal keras evaluate.
         Args:
             trials: how many times to run the MCDropout network to get empirical variance. I would recommend higher than 3.
@@ -78,17 +84,25 @@ class Dropout():
 
         """
 
-        
+
+        threads = []
         results = []
+
+
         for _ in range(trials):
-            test_scores = self.model.evaluate(*args, **kwargs)
-            results.append(test_scores)
+            threads.append(ThreadWithResult(target=self.model.evaluate, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+        for thread in threads:
+            thread.join()
+            results.append(thread.result)
+
         if type(results[0]) is tuple:
             return list(zip(*results))
         return results
 
     def predict(self, *args, trials = 3, return_std = True, **kwargs):
-        
+
         """predict. Literally use this as you'd use the normal keras predict.
         Args:
             trials: how many times to run the network
@@ -99,7 +113,18 @@ class Dropout():
 
         """
 
-        predictions = [self.model.predict(*args, **kwargs) for _ in range(trials)]
+        threads = []
+        predictions = []
+
+        for _ in range(trials):
+            threads.append(ThreadWithResult(target=self.model.predict, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+
+        for thread in threads:
+            thread.join()
+            predictions.append(thread.result)
+
         predictions = tf.stack(predictions)
         mean_preds = tf.reduce_mean(predictions, axis = 0)
 
@@ -126,7 +151,17 @@ class Dropout():
 
         """
 
-        predictions = [self.model.predict(*args, **kwargs) for _ in range(trials)]
+        threads = []
+        predictions = []
+
+        for _ in range(trials):
+            threads.append(ThreadWithResult(target=self.model.predict, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+
+        for thread in threads:
+            thread.join()
+            predictions.append(thread.result)
         predictions = tf.stack(predictions)
 
         return predictions

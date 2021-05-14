@@ -9,10 +9,19 @@ from tensorflow_probability import distributions as tfd
 from keras import backend as K
 from keras import activations, initializers
 import tensorflow_probability as tfp
+import threading
+
+
+class ThreadWithResult(threading.Thread):
+    def __init__(self, group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None):
+        def function():
+            self.result = target(*args, **kwargs)
+        super().__init__(group=group, target=function, name=name, daemon=daemon)
+
 
 class Ensemble():
     def __init__(self, Model, num_ens=3):
-        
+
         """Ensemble Initializer. Turns a neural network into an ensemble of networks.
 
         Args:
@@ -23,11 +32,11 @@ class Ensemble():
             Nothing lol
 
         """
-        
+
         self.ensemble = [Model() for _ in range(num_ens)]
 
     def compile(self, *args, **kwargs):
-        
+
         """compile. Literally use this as you'd use the normal compile.
 
         Returns:
@@ -35,23 +44,33 @@ class Ensemble():
 
         """
 
+
+
         for submodel in self.ensemble:
             submodel.compile(*args, **kwargs)
 
     def fit(self, *args, **kwargs):
-        
+
         """fit. Literally use this as you'd use the normal fit.
-        
+
         Returns:
             Nothing lol
 
         """
 
+        threads = []
+
         for submodel in self.ensemble:
-            submodel.fit(*args, **kwargs)
+            threads.append(threading.Thread(target=submodel.fit, args=args, kwargs = kwargs))
+            threads[-1].start()
+
+        for thread in threads:
+            thread.join()
+
+
 
     def evaluate(self, *args, **kwargs):
-        
+
         """evaluate. Literally use this as you'd use the normal evaluate.
 
         Returns:
@@ -59,10 +78,18 @@ class Ensemble():
 
         """
 
+        threads = []
         results = []
+
+
         for submodel in self.ensemble:
-            test_scores = submodel.evaluate(*args, **kwargs)
-            results.append(test_scores)
+            threads.append(ThreadWithResult(target=submodel.evaluate, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+        for thread in threads:
+            thread.join()
+            results.append(thread.result)
+
         if type(results[0]) is tuple:
             return list(zip(*results))
         return
@@ -76,9 +103,20 @@ class Ensemble():
         Returns:
             a mean and a variance for each input as a N_testx2 matrix
 
-        """        
-        
-        predictions = [submodel.predict(*args, **kwargs) for submodel in self.ensemble]
+        """
+
+        threads = []
+        predictions = []
+
+        for submodel in self.ensemble:
+            threads.append(ThreadWithResult(target=submodel.predict, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+        for thread in threads:
+            thread.join()
+            predictions.append(thread.result)
+
+
         predictions = tf.stack(predictions)
 
         mean_preds = tf.reduce_mean(predictions, axis = 0)
@@ -103,7 +141,16 @@ class Ensemble():
 
         """
 
-        predictions = [submodel.predict(*args, **kwargs) for submodel in self.ensemble]
+        threads = []
+        predictions = []
+
+        for submodel in self.ensemble:
+            threads.append(ThreadWithResult(target=submodel.predict, args=args, kwargs=kwargs))
+            threads[-1].start()
+
+        for thread in threads:
+            thread.join()
+            predictions.append(thread.result)
         predictions = tf.stack(predictions)
 
         return predictions
