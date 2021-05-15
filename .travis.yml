@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - "3.6" 
+  
+install:
+  - pip install -r requirements.txt
+  - pip install pytest-cov
+  - pip install coveralls
+  - pip install .
+
+script:
+  - pytest --cov-report=xml --cov=. tests/
+  
+after_success:
+  - coveralls

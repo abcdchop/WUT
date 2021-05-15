@@ -1,5 +1,8 @@
 # <img src="/docs/images/logo.png">
 
+[![Build Status](https://travis-ci.com/RansML/wut_temp_dev.svg?branch=master)](https://travis-ci.com/RansML/wut_temp_dev)
+[![Coverage Status](https://coveralls.io/repos/github/abcdchop/WUT/badge.svg)](https://coveralls.io/github/abcdchop/WUT?branch=master)?branch=master)
+
 * [Documentation](http://abcdchop.github.io/WUT/)
 * [Tutorial](WUT_Guide.ipynb)
 
