@@ -22,7 +22,7 @@ Available uncertainty quantification models are,
 | --- | --- | --- |
 | [Ensemble]() | Epistemic | Any network  |
 | [MC Dropout]() | Epistemic | Any network  |
-| [Stochastic Variational Inference]() | Aleatoric and Epistemic | Fully connected layers only  |
+| [Stochastic Variational Inference]() | Epistemic and Aleatoric | Fully connected layers only  |
 | [Variance Networks]() | Aleatoric | Fully connected layers only  |
 | [Mixture of Gaussians/Mixture Density Networks]() | Aleatoric | Last layer |
 
