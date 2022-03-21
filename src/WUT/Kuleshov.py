@@ -29,5 +29,5 @@ class Kuleshov():
 
     def create_buckets(self, percentiles):
         percentiles = tf.sort(percentiles, axis=0, direction='ASCENDING')
-#         percentiles = [0.0] + [percentiles[i * int(len(percentiles)/(self.num_buckets-1))] for i in range(self.num_buckets-1)] + [1.0]
+        percentiles = [0.0] + [percentiles[i * int(len(percentiles)/(self.num_buckets-1))] for i in range(self.num_buckets-1)] + [1.0]
         return percentiles
