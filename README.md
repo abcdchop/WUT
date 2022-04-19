@@ -6,6 +6,10 @@
 * [Documentation](http://abcdchop.github.io/WUT/)
 * [Tutorial](WUT_Guide.ipynb)
 
+```python
+model = CalibrationFnCall( UncertaityFnCall(<keras_model>) )
+```
+
 ### Features
 Welcome to WUT?! a wrapper for uncertainty in tensorflow. This is a library for uncertainty quantification in deep neural networks implemented in TensorFlow/Keras. Networks can be wrapped in one of the WUT? classes in a single line of code. For instance,
 ```python
