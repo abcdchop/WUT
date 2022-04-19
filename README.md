@@ -7,7 +7,7 @@
 * [Tutorial](WUT_Guide.ipynb)
 
 ```python
-model = CalibrationFnCall( UncertaityFnCall(<keras_model>) )
+model = CalibrationFnCall( UncertaityFnCall( <keras_model> ) )
 ```
 
 ### Features
